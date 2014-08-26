@@ -620,6 +620,8 @@ a:active {
 
 .menu-social li a[href*="youtube.com"]::before { content: '\f167'; }
 
+.menu-social .rss-link a::before { content: '\f09e'; }
+
 @media screen and (max-width: 600px) {
     #menu-social ul {
 	position: absolute;

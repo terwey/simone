@@ -185,22 +185,29 @@ add_action( 'save_post',     'simone_category_transient_flusher' );
  */
 
 function simone_social_menu() {
+    echo '<div id="menu-social" class="menu-social">';
+    echo '<ul id="menu-social-items" class="menu-items">';
     if ( has_nav_menu( 'social' ) ) {
 	wp_nav_menu(
 		array(
 			'theme_location'  => 'social',
-			'container'       => 'div',
-			'container_id'    => 'menu-social',
-			'container_class' => 'menu-social',
+			'container'       => false,
+			'container_id'    => '',
+			'container_class' => '',
 			'menu_id'         => 'menu-social-items',
 			'menu_class'      => 'menu-items',
 			'depth'           => 1,
 			'link_before'     => '<span class="screen-reader-text">',
 			'link_after'      => '</span>',
 			'fallback_cb'     => '',
+                        'items_wrap'      => '%3$s'
 		)
 	);
     }
+    echo '<li class="menu-item rss-link"><a href="' . esc_url( home_url( '/' ) ) . 'feed/rss"><span class="screen-reader-text">RSS Feed</span></a></li>';
+    echo '</ul>';
+    echo '</div>';
+    
 }
 
 
