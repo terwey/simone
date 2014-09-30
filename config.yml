@@ -1,3 +1,6 @@
 # Simone - A theme for Bolt.
 
-sidebar: true
+sidebar: false
+
+header_image: images/stones.jpg
+header_textcolor: "#FFF"
