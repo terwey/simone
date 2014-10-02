@@ -6,3 +6,8 @@ sidebar: false
 header_image: images/stones.jpg
 header_textcolor: "#FFF"
 
+
+
+frontpage: index.twig
+record_template: single.twig
+

@@ -1,0 +1,16 @@
+{% macro responsive_thumbnail(image, title) %}
+
+<div class="single-post-thumbnail clear">
+    <div class="image-shifter">
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="{{ image|thumbnail('964', '650') }}" media="(min-width: 800px)">
+            <source srcset="{{ image|thumbnail('570', '490') }}" media="(min-width: 400px)">
+            <source srcset="{{ image|thumbnail('285', '245') }}">
+            <!--[if IE 9]></video><![endif]-->
+            <img alt="{{ title }}" src="{{ image|thumbnail('964', '650') }}">
+        </picture>
+    </div>
+</div>            
+
+{% endmacro %}
