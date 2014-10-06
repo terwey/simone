@@ -69,8 +69,7 @@
 		<nav id="site-navigation" class="main-navigation clear" role="navigation">
                     <h1 class="menu-toggle"><a href="#">{{ 'Menu' }}</a></h1>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-
+            {{ menu() }}
                         <div class="search-toggle">
                             <i class="fa fa-search"></i>
                             <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'simone' ); ?></a>
