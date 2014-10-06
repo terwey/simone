@@ -54,12 +54,7 @@
                 }
             ?>#}
             <div class="site-branding header-background-image" style="background-image: url('{{ paths.theme}}/{{ theme.header_image }}')">
-            {# <figure class="header-image">
 
-                    <a href="{{ paths.root }}" rel="home">
-                            <img src="{{ paths.theme}}/{{ theme.header_image }}" width="1200" height="100" alt="">
-                    </a>
-            </figure> #} 
                     <div class="title-box">
 			<h1 class="site-title"><a href="{{ paths.root }}" rel="home">{{ app.config.get('general/sitename') }}</a></h1>
 			<h2 class="site-description">{{ app.config.get('general/payoff')}}</h2>
@@ -72,7 +67,7 @@
             {{ menu() }}
                         <div class="search-toggle">
                             <i class="fa fa-search"></i>
-                            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'simone' ); ?></a>
+                            <a href="#search-container" class="screen-reader-text">{{ __("Search") }}</a>
                         </div>
                         <?php simone_social_menu(); ?>
 
@@ -80,7 +75,7 @@
 
                 <div id="header-search-container" class="search-box-wrapper clear hide">
 			<div class="search-box clear">
-				<?php get_search_form(); ?>
+	            {% include '_sub_searchbox.twig' %}
 			</div>
 		</div>
 

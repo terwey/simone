@@ -1,14 +1,42 @@
-<?php
-/**
- * The Sidebar containing the main widget areas.
- *
- * @package Simone
- */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
 	<div id="secondary" class="widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+
+        <aside id="search-2" class="widget widget_search">
+            {% include '_sub_search.twig' %}
+        </aside>     
+
+
+
+        <aside id="recent-posts-2" class="widget widget_recent_entries">        <h1 class="widget-title">Recent Posts</h1>      <ul>
+                    <li>
+                <a href="http://wordpress.cmsdemo.twokings.eu/tum-lucius-mihi-vero-ista-valde-probata-sunt/">Tum Lucius: Mihi vero ista valde probata sunt</a>
+                        </li>
+                    <li>
+                <a href="http://wordpress.cmsdemo.twokings.eu/respondent-extrema-primis-media-utrisque/">Respondent extrema primis, media utrisque</a>
+                        </li>
+                    <li>
+                <a href="http://wordpress.cmsdemo.twokings.eu/sed-quid-minus-peripatetici-probandum-quam-esse-aliquem/">Sed quid minus Peripatetici probandum quam esse aliquem</a>
+                        </li>
+                    <li>
+                <a href="http://wordpress.cmsdemo.twokings.eu/hello-world/">Hello world!</a>
+                        </li>
+                </ul>
+        </aside>
+
+        <aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href='http://wordpress.org/' rel='external nofollow' class='url'>Mr WordPress</a></span> on <a href="http://wordpress.cmsdemo.twokings.eu/hello-world/#comment-1">Hello world!</a></li></ul></aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>        <ul>
+    <li><a href='http://wordpress.cmsdemo.twokings.eu/2014/07/'>July 2014</a></li>
+    <li><a href='http://wordpress.cmsdemo.twokings.eu/2013/07/'>July 2013</a></li>
+    <li><a href='http://wordpress.cmsdemo.twokings.eu/2013/03/'>March 2013</a></li>
+        </ul>
+</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>      <ul>
+    <li class="cat-item cat-item-1"><a href="http://wordpress.cmsdemo.twokings.eu/category/uncategorized/" >Uncategorized</a>
+</li>
+        </ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h1 class="widget-title">Meta</h1>            <ul>
+            <li><a rel="nofollow" href="http://wordpress.cmsdemo.twokings.eu/wp-admin/">Site Admin</a></li>         <li><a rel="nofollow" href="http://wordpress.cmsdemo.twokings.eu/wp-login.php?action=logout&#038;_wpnonce=e8d1d2bb5a">Log out</a></li>
+            <li><a href="http://wordpress.cmsdemo.twokings.eu/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+            <li><a href="http://wordpress.cmsdemo.twokings.eu/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>           </ul>
+</aside>    
+
 	</div><!-- #secondary -->
