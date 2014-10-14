@@ -1,5 +1,5 @@
 {% import "_macros.twig" as macro %}
-{% include "_header.twig" %}
+{% include "_header.twig" with {'bodyclass': 'single'} %}
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -11,6 +11,29 @@
             {% endif %}
             <header class="entry-header">
                 <h1 class="entry-title">{{ record.title }}</h1>
+
+{# Entry meta. #}
+<div class="entry-meta">
+
+<span class="byline">Written by 
+<span class="author vcard">
+    <strong>{{ record.user.displayname }}</strong>
+</span>
+</span>
+<span class="mobile-hide"> on </span>
+<span class="posted-on">
+<a href="http://wordpress.cmsdemo.twokings.eu/respondent-extrema-primis-media-utrisque/" rel="bookmark">
+    <time class="entry-date published" datetime="{{ record.datepublish|date("c") }}">{{ record.datepublish|localdate("%B %e, %Y") }}</time>
+</a>
+</span>
+{% if record.editlink() %}
+    <span class="edit-link"><a class="post-edit-link" href="{{ record.editlink() }}">Edit</a>
+{% endif %}
+</span>     
+</div>
+{# /entry meta. #}
+
+
             </header><!-- .entry-header -->
 
             <div class="entry-content">
