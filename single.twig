@@ -6,32 +6,11 @@
 
 
         <article id="post-{{record.id}}" class="post-2 page type-page status-publish has-post-thumbnail hentry">
-            {% if record.image is defined %}
-                {{ macro.responsive_thumbnail(record.image, record.title) }}
-            {% endif %}
+            
             <header class="entry-header">
                 <h1 class="entry-title">{{ record.title }}</h1>
 
-{# Entry meta. #}
-<div class="entry-meta">
-
-<span class="byline">Written by 
-<span class="author vcard">
-    <strong>{{ record.user.displayname }}</strong>
-</span>
-</span>
-<span class="mobile-hide"> on </span>
-<span class="posted-on">
-<a href="http://wordpress.cmsdemo.twokings.eu/respondent-extrema-primis-media-utrisque/" rel="bookmark">
-    <time class="entry-date published" datetime="{{ record.datepublish|date("c") }}">{{ record.datepublish|localdate("%B %e, %Y") }}</time>
-</a>
-</span>
-{% if record.editlink() %}
-    <span class="edit-link"><a class="post-edit-link" href="{{ record.editlink() }}">Edit</a>
-{% endif %}
-</span>     
-</div>
-{# /entry meta. #}
+                {{ macro.entrymeta(record) }}
 
 
             </header><!-- .entry-header -->
@@ -43,15 +22,49 @@
                 {{ record.body }}
 
             </div><!-- .entry-content -->
-            <?php edit_post_link( __( 'Edit', 'simone' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+
         </article><!-- #post-## -->
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+
+        <nav class="navigation post-navigation" role="navigation">
+            <div class="post-nav-box clear">
+                <h1 class="screen-reader-text">Post navigation</h1>
+                <div class="nav-links">
+  
+                    {% set previous = record.previous('id') %}
+                    {% if previous %}
+                    <div class="nav-previous">
+                        <div class="nav-indicator">Previous Post:</div>
+                        <h1><a href="{{ previous.link }}" rel="prev">{{ previous.title }}</a></h1>
+                    </div>
+                    {% endif %}
+
+                    {% set next = record.next('id') %}
+                    {% if next %}
+                    <div class="nav-next">
+                        <div class="nav-indicator">Next Post:</div>
+                        <h1><a href="{{ next.link }}" rel="next">{{ next.title }}</a></h1>
+                    </div>
+                    {% endif %}
+                </div><!-- .nav-links -->
+            </div><!-- .post-nav-box -->
+        </nav><!-- .navigation -->
+
+
+
+        {% if (Disqus) is defined or (FacebookComments is defined) %}
+        <div id="comments" class="comments-area">
+            <div id="respond" class="comment-respond">
+                <h3 id="reply-title" class="comment-reply-title">Leave a reply</h3>
+                {% if (Disqus) is defined %}
+                    {{ Disqus.disqus() }}
+                {% else %}
+                    {{ FacebookComments.facebookComments() }}
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

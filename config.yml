@@ -7,7 +7,9 @@ header_image: images/stones.jpg
 header_textcolor: "#FFF"
 
 
-
-frontpage: index.twig
+# Template filenames: 
+maintenance_template: maintenance_default.twig
+homepage_template: index.twig
 record_template: single.twig
-
+listing_template: listing.twig
+search_results_template: listing.twig

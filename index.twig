@@ -1,57 +1,54 @@
-{% include "_header.twig" %}
+{% import "_macros.twig" as macro %}
+{% include "_header.twig" with {'bodyclass': 'home'} %}
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-
-			<article id="post-{{record.id}}" class="post-2826 page type-page status-publish has-post-thumbnail hentry">
-			        {# <?php 
-			    if (has_post_thumbnail()) {
-			        echo '<div class="single-post-thumbnail clear">';
-			        echo '<div class="image-shifter">';
-			        simone_the_responsive_thumbnail( get_the_ID() );
-			        echo '</div>';
-			        echo '</div>';
-			    }
-			    ?> #}
+			<article id="post-{{record.id}}" class=" page type-page status-publish has-post-thumbnail hentry">
+			    {% if record.image is defined %}
+    	            {{ macro.responsive_thumbnail(record.image, record.title, 'front-index-thumbnail') }}
+	            {% endif %}
+			    <div class="index-box has-thumbnail">
 				<header class="entry-header">
 					<h1 class="entry-title">{{ record.title }}</h1>
+
+					{{ macro.recordmeta(record) }}
+
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
 					
 					{{ record.teaser }}
 
-					{{ record.body }}
 				</div>
-				<?php edit_post_link( __( 'Edit', 'simone' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+
+				{{ macro.recordfooter(record) }}		
+
 			</article><!-- #post-## -->
 
+        {% setcontent records = "entries/latest/4" allowpaging %}
+        {% for record in records %}
+        	<article>
 
+			    <div class="index-box has-thumbnail">
+				<header class="entry-header">
+					<h1 class="entry-title">{{ record.title }}</h1>
 
+					{{ macro.recordmeta(record) }}
 
-		<?php if ( have_posts() ) : ?>
+				</header><!-- .entry-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+				<div class="entry-content">
+					
+					{{ record.teaser }}
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+				</div>
 
-			<?php endwhile; ?>
+				{{ macro.recordfooter(record) }}	
+        	</article>
+    	{% endfor %}
 
-			<?php simone_paging_nav(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
+		{{ pager() }}
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
