@@ -4,29 +4,6 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<article id="post-{{record.id}}" class=" page type-page status-publish has-post-thumbnail hentry">
-			    {% if record.image is defined %}
-    	            {{ macro.responsive_thumbnail(record.image, record.title, 'front-index-thumbnail') }}
-	            {% endif %}
-			    <div class="index-box has-thumbnail">
-				<header class="entry-header">
-					<h1 class="entry-title">{{ record.title }}</h1>
-
-					{{ macro.recordmeta(record) }}
-
-				</header><!-- .entry-header -->
-
-				<div class="entry-content">
-					
-					{{ record.teaser }}
-
-				</div>
-
-				{{ macro.recordfooter(record) }}		
-
-			</article><!-- #post-## -->
-
-        {% setcontent records = "entries/latest/4" allowpaging %}
         {% for record in records %}
         	<article>
 
@@ -59,7 +36,6 @@
     	{% endfor %}
 
 		{{ pager() }}
-
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
