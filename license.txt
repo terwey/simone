@@ -1,6 +1,9 @@
 Simone
 ====================================
-Simone WordPress Theme, Copyright 2014 Morten Rand-Hendriksen.
+
+Simone Bolt Theme, modifications by Bob den Otter, bob@twokings.nl
+
+Derived of Simone WordPress Theme, Copyright 2014 Morten Rand-Hendriksen.
 Simone is distributed under the terms of the GNU GPL.
 
 Licenses and External Assets
@@ -18,6 +21,3 @@ FontAwesome: Published under various licenses http://fortawesome.github.io/Font-
 The accessible main menu is powered by Superfish. MIT License https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
 Responsive triggers for Superfish and Masonry powered by Enquire.js. MIT Licence http://wicky.nillia.ms/enquire.js/#license
 
-Images used in screenshot are by the theme author and published under the CC by-nc-nd 2.0 license:
-Background: Cherry Blossom Tree - https://www.flickr.com/photos/mor10/13933662411/
-On-device grabs: Distressed Mailboxes, New Orleans - https://www.flickr.com/photos/mor10/5874760659/

@@ -1,0 +1,27 @@
+{
+    "name": "bobdenotter/simone",
+    "description": "Simone - A rensposive theme for Bolt, focused on typography and aims to put the content front and center. Fonts are large and clear and scale according to screen width.",
+    "type": "bolt-theme",
+    "keywords": ["theme", "simone", "port", "responsive", "typography"],
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bob den Otter",
+            "email": "bob@twokings.nl"
+        }, 
+        {
+            "name": "Morten Rand-Hendriksen",
+            "email": "morten@mor10.com"
+        }
+    ],
+"extra": {
+        "bolt-screenshots": [
+            "screenshots/sceenshot1.png",
+            "screenshots/sceenshot2.png",
+            "screenshots/sceenshot3.png"
+        ]
+    }
+}
