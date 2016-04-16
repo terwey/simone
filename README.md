@@ -4,6 +4,8 @@ Simone is a responsive modern design theme designed and developed by
 [Morten Rand-Hendriksen](http://mor10.com) and ported to Bolt by Bob den
 Otter.
 
+**Note:**  This is for Bolt 3. Check out the `bolt-v2` branch for a Bolt 2 compatible version.
+
 Simone's design is focused on typography and aims to put the content front
 and center. Fonts are large and clear and scale according to screen width.
 On wider screens blockquotes and images can be aligned left and right to
