@@ -17,6 +17,10 @@
             "email": "morten@mor10.com"
         }
     ],
+    "suggest": {
+        "bolt/disqus": "Add Disqus comments to your pages.",
+        "bolt/facebookcomments": "Add Facebook comments to your pages."
+    },
 "extra": {
         "bolt-screenshots": [
             "screenshots/screenshot1.png",
