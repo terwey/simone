@@ -4,7 +4,7 @@
     "type": "bolt-theme",
     "keywords": ["theme", "simone", "port", "responsive", "typography"],
     "require": {
-        "bolt/bolt": ">=2.0.0,<3.0.0"
+        "bolt/bolt": "^3.0"
     },
     "license": "GPL v2",
     "authors": [
@@ -17,6 +17,10 @@
             "email": "morten@mor10.com"
         }
     ],
+    "suggest": {
+        "bolt/disqus": "Add Disqus comments to your pages.",
+        "bolt/facebookcomments": "Add Facebook comments to your pages."
+    },
 "extra": {
         "bolt-screenshots": [
             "screenshots/screenshot1.png",

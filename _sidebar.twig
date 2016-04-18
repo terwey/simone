@@ -3,8 +3,9 @@
 
         <aside id="search-2" class="widget widget_search">
             {% include '_sub_searchbox.twig' %}
-        </aside>     
+        </aside>
 
+        {{ widgets('aside_top') }}
 
     {% for ct in app.config.get('contenttypes') %}
 
@@ -26,5 +27,6 @@
 
     {% endfor %}
 
+        {{ widgets('aside_bottom') }}
 
 	</div><!-- #secondary -->
