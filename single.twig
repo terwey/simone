@@ -7,7 +7,7 @@
 
         <article id="post-{{record.id}}" class="post-2 page type-page status-publish has-post-thumbnail hentry">
 
-                {% if record.image is defined %}
+                {% if record.image is defined and record.image is not empty %}
                     <div class="small-index-thumbnail clear">
                         <a href="{{ record.image|image }}">
                             <img width="980" height="450" src="{{ thumbnail(record.image, 780, 250) }}" class="attachment-index-thumb wp-post-image" alt="{{ record.image }}">
